@@ -23,8 +23,6 @@ forecast_col = '4. close'
 forecast_out = int(math.ceil(0.01 * len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
 
-print(df.head())
-
 #Set X and y values
 X = np.array(df.drop(columns = ['label'], axis = 1))
 X = preprocessing.scale(X)
